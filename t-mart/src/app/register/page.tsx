@@ -1,12 +1,13 @@
-
+"use client";
 import React from "react";
+import { useState } from "react";
 import Welcome from "@/components/Welcome";
+import RegisterForm from "@/components/RegisterForm";
 
 function Register() {
+  const [step, setStep] = useState(1);
   return (
-    <div>
-      <Welcome />
-    </div>
+    <div>{step == 1 ? <Welcome nextStep={setStep} /> : <RegisterForm  prevStep={setStep}/>}</div>
   );
 }
 
