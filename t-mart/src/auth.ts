@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+
 import connectDB from "./config/db";
 import User from "./models/user.model";
 import bcrypt from "bcryptjs";
@@ -55,11 +56,11 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   },
   pages: {
     signIn: "/login",
-    error:"/login"
+    error: "/login",
   },
-  session:{
-    strategy:"jwt",
-    maxAge:10*24*60*60*1000
+  session: {
+    strategy: "jwt",
+    maxAge: 10 * 24 * 60 * 60 * 1000,
   },
-  secret: process.env.AUTH_SECRET
+  secret: process.env.AUTH_SECRET,
 });

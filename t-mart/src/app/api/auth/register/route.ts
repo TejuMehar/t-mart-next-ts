@@ -34,11 +34,10 @@ export async function POST(req: NextRequest) {
       user,
       status: 200,
     });
-
   } catch (err) {
-            return NextResponse.json({
-            message:`register err ${err} `,
-            status:400
-        })
+    return NextResponse.json({
+      message: `register err ${err} `,
+      status: 400,
+    });
   }
 }
